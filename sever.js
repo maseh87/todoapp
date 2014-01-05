@@ -4,6 +4,7 @@ var todos = [];
 
 
 
+
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
   app.use(express.favicon());
@@ -30,12 +31,21 @@ app.get('/newpage', function(req, res) {
 });
 
 app.post('/todo', function(req, res) {
-	console.log('this is the req', req.body);
+
 	todos.push(req.body.todo);
+	console.log(todos)
+	res.send(201);
+});
+app.put('/update/todo', function(req, res) {
+	
+	for(var i = 0; i < todos.length; i++){
+		if(todos[i].value === req.body.value){
+			todos[i] = req.body;
+		}
+	}
 	console.log(todos);
 	res.send(201);
 });
-
 
 
 app.listen(app.get('port'));
