@@ -40,6 +40,7 @@ $('ul').on('click', 'li', function() {
 
 getToDos(showToDos);
 $(document).ready(function(){
+
   $('button').on('click', function(e){
     var todo = $('input').val();
     if(todo.length > 0) {
@@ -60,6 +61,5 @@ $(document).ready(function(){
       console.log(li);
       $('input').val('');
     } 
-
   });
 });

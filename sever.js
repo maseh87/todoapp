@@ -1,7 +1,7 @@
 var express = require('express');
 var Firebase = require('firebase');
 var myRootRef = new Firebase('https://myfirstsite.firebaseIO-demo.com/');
-myRootRef.set("yo!");
+
 var app = express();
 var todos = [];
 
