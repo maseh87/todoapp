@@ -1,4 +1,4 @@
-
+//
 function getToDos(cb){
   $.ajax({
     url: '/get/todos',
